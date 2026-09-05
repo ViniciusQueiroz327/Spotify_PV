@@ -33,31 +33,33 @@ const VolumeControl = ({
 
   return (
     <div className="volume-control">
-      <button
-        className="volume-control__button"
-        onClick={toggleMute}
-        aria-label={isMuted ? "Ativar som" : "Silenciar"}
-      >
-        {getVolumeIcon()}
-      </button>
+      <div className="volume-control__inner">
+        <button
+          className="volume-control__button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Ativar som" : "Silenciar"}
+        >
+          {getVolumeIcon()}
+        </button>
 
-      <div className="volume-control__slider">
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={isMuted ? 0 : volume}
-          onChange={(event) =>
-            setVolume(Number(event.target.value))
-          }
-          style={
-            {
-              "--volume": `${(isMuted ? 0 : volume) * 100}%`,
-            } as React.CSSProperties
-          }
-          aria-label="Volume"
-        />
+        <div className="volume-control__slider">
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={isMuted ? 0 : volume}
+            onChange={(event) =>
+              setVolume(Number(event.target.value))
+            }
+            style={
+              {
+                "--volume": `${(isMuted ? 0 : volume) * 100}%`,
+              } as React.CSSProperties
+            }
+            aria-label="Volume"
+          />
+        </div>
       </div>
     </div>
   );
