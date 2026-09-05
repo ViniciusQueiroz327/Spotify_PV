@@ -1,0 +1,12 @@
+.song-info {
+  text-align: center;
+}
+
+.song-info h1,
+.song-info p {
+  margin: 0;
+}
+
+.song-info p {
+  margin-top: 4px;
+}

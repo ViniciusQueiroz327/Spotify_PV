@@ -1,0 +1,10 @@
+.progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar input {
+  flex: 1;
+}

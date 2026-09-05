@@ -1,4 +1,6 @@
-export const songs = [
+import type { Song } from "../types/song";
+
+export const songs: Song[] = [
   {
     id: 1,
     title: "Never Be Alone",
