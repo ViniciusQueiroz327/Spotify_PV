@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useAudioPlayer } from "../../hooks/useAudioPlayer";
 
 import AlbumCover from "../AlbumCover/AlbumCover";
@@ -7,6 +8,8 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import VolumeControl from "../VolumeControl/VolumeControl";
 
 import "./Player.css";
+
+const LIKED_SONGS_KEY = "spotify-pv-liked-songs";
 
 const Player = () => {
   const {
@@ -24,6 +27,39 @@ const Player = () => {
     toggleMute,
   } = useAudioPlayer();
 
+  const [likedSongs, setLikedSongs] = useState<number[]>(() => {
+    const savedLikes = localStorage.getItem(LIKED_SONGS_KEY);
+
+    if (!savedLikes) {
+      return [];
+    }
+
+    try {
+      return JSON.parse(savedLikes);
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      LIKED_SONGS_KEY,
+      JSON.stringify(likedSongs)
+    );
+  }, [likedSongs]);
+
+  const isLiked = likedSongs.includes(currentSong.id);
+
+  const toggleLike = () => {
+    setLikedSongs((previous) => {
+      if (previous.includes(currentSong.id)) {
+        return previous.filter((id) => id !== currentSong.id);
+      }
+
+      return [...previous, currentSong.id];
+    });
+  };
+
   return (
     <div className="player">
       <AlbumCover
@@ -34,6 +70,8 @@ const Player = () => {
       <SongInfo
         title={currentSong.title}
         artist={currentSong.artist}
+        isLiked={isLiked}
+        toggleLike={toggleLike}
       />
 
       <ProgressBar

@@ -20,20 +20,33 @@ const ProgressBar = ({
     return `${minutes}:${seconds.toString().padStart(2, "0")}`;
   };
 
+  const progress =
+    duration > 0 ? (currentTime / duration) * 100 : 0;
+
   return (
     <div className="progress-bar">
-      <span>{formatTime(currentTime)}</span>
+      <span className="progress-bar__time">
+        {formatTime(currentTime)}
+      </span>
 
-      <input
-        type="range"
-        min="0"
-        max={duration || 0}
-        step="0.1"
-        value={currentTime}
-        onChange={(event) => seek(Number(event.target.value))}
-      />
+      <div className="progress-bar__track">
+        <input
+          type="range"
+          min="0"
+          max={duration || 0}
+          step="0.1"
+          value={currentTime}
+          onChange={(event) => seek(Number(event.target.value))}
+          style={{
+            "--progress": `${progress}%`,
+          } as React.CSSProperties}
+          aria-label="Progresso da música"
+        />
+      </div>
 
-      <span>{formatTime(duration)}</span>
+      <span className="progress-bar__time">
+        {formatTime(duration)}
+      </span>
     </div>
   );
 };

@@ -5,9 +5,16 @@ import "./SongInfo.css";
 interface SongInfoProps {
   title: string;
   artist: string;
+  isLiked: boolean;
+  toggleLike: () => void;
 }
 
-const SongInfo = ({ title, artist }: SongInfoProps) => {
+const SongInfo = ({
+  title,
+  artist,
+  isLiked,
+  toggleLike,
+}: SongInfoProps) => {
   return (
     <div className="song-info">
       <div className="song-info__text">
@@ -16,10 +23,14 @@ const SongInfo = ({ title, artist }: SongInfoProps) => {
       </div>
 
       <button
-        className="song-info__like"
-        aria-label="Curtir música"
+        className={`song-info__like ${
+          isLiked ? "song-info__like--active" : ""
+        }`}
+        onClick={toggleLike}
+        aria-label={isLiked ? "Descurtir música" : "Curtir música"}
+        aria-pressed={isLiked}
       >
-        <Heart />
+        <Heart fill={isLiked ? "currentColor" : "none"} />
       </button>
     </div>
   );

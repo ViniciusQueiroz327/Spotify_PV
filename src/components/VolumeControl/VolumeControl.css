@@ -2,9 +2,145 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Verificar como fica melhor*/
   gap: 10px;
 }
 
+.volume-control__button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #b3b3b3;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.volume-control__button svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.volume-control__button:hover {
+  color: #ffffff;
+}
+
+.volume-control__button:active {
+  transform: scale(0.9);
+}
+
+.volume-control__slider {
+  width: 140px;
+  max-width: 35%;
+
+  display: flex;
+  align-items: center;
+}
+
 .volume-control input {
-  flex: 1;
+  --volume: 100%;
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      to right,
+      #ffffff 0%,
+      #ffffff var(--volume),
+      #4d4d4d var(--volume),
+      #4d4d4d 100%
+    );
+  cursor: pointer;
+  outline: none;
+}
+
+/* Chrome / Edge / Safari */
+.volume-control input::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.volume-control input::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Firefox */
+.volume-control input::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: #4d4d4d;
+}
+
+.volume-control input::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.volume-control input::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Desktop */
+.volume-control:hover input::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+.volume-control:hover input::-moz-range-thumb {
+  opacity: 1;
+}
+
+.volume-control:hover input {
+  height: 6px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .volume-control {
+    gap: 8px;
+  }
+
+  .volume-control__slider {
+    max-width: none;
+  }
+
+  .volume-control input {
+    height: 5px;
+  }
+
+  .volume-control input::-webkit-slider-thumb {
+    opacity: 1;
+  }
+
+  .volume-control input::-moz-range-thumb {
+    opacity: 1;
+  }
 }

@@ -33,33 +33,48 @@
 }
 
 .song-info__like {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   padding: 0;
   border: 0;
   background: transparent;
   color: #b3b3b3;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition:
     color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.15s ease;
 }
 
 .song-info__like svg {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   stroke-width: 1.8;
+  transition:
+    transform 0.2s ease,
+    fill 0.2s ease;
 }
 
 .song-info__like:hover {
-  color: #ffffff;
-  transform: scale(1.05);
+  color: #6e0101;
 }
 
 .song-info__like:active {
-  transform: scale(0.92);
+  transform: scale(0.9);
+}
+
+.song-info__like--active {
+  color: #6e0101;
+}
+
+.song-info__like--active svg {
+  transform: scale(1.08);
+}
+
+.song-info__like--active:hover {
+  color: #6e0101c4;
 }
