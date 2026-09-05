@@ -65,6 +65,7 @@ const Player = () => {
       <AlbumCover
         cover={currentSong.cover}
         title={currentSong.title}
+        position={currentSong.coverPosition}
       />
 
       <SongInfo

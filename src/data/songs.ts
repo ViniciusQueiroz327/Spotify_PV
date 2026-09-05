@@ -7,6 +7,7 @@ export const songs: Song[] = [
     artist: "Shawn Mendes",
     cover: "/imgs/covers/1.jpg",
     audio: "/audio/NeverBeAlone.mp3",
+    coverPosition: "80% 100%",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const songs: Song[] = [
     artist: "Shawn Mendes",
     cover: "/imgs/covers/2.jpg",
     audio: "/audio/TheresNothingHoldingMeBack.mp3",
+    coverPosition: "center 25%",
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const songs: Song[] = [
     artist: "Ed Sheeran",
     cover: "/imgs/covers/3.jpg",
     audio: "/audio/Perfect.mp3",
+    coverPosition: "center 80%",
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const songs: Song[] = [
     artist: "Ed Sheeran",
     cover: "/imgs/covers/4.jpg",
     audio: "/audio/Photograph.mp3",
+    coverPosition: "center 80%",
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ export const songs: Song[] = [
     artist: "Ed Sheeran",
     cover: "/imgs/covers/5.jpg",
     audio: "/audio/ShapeOfYou.mp3",
+    coverPosition: "center 70%",
   },
   {
     id: 6,
@@ -42,6 +47,7 @@ export const songs: Song[] = [
     artist: "Alex Warren",
     cover: "/imgs/covers/6.jpg",
     audio: "/audio/Ordinary.mp3",
+    coverPosition: "center 100%",
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ export const songs: Song[] = [
     artist: "Alex Warren",
     cover: "/imgs/covers/7.jpg",
     audio: "/audio/Eternity.mp3",
+    coverPosition: "center 35%",
   },
   {
     id: 8,
@@ -56,6 +63,7 @@ export const songs: Song[] = [
     artist: "John Legend",
     cover: "/imgs/covers/8.jpg",
     audio: "/audio/AllofMe.mp3",
+    coverPosition: "center 75%",
   },
   {
     id: 9,
@@ -63,6 +71,7 @@ export const songs: Song[] = [
     artist: "Bruno Mars",
     cover: "/imgs/covers/9.jpg",
     audio: "/audio/JustTheWayYouAre.mp3",
+    coverPosition: "center 55%",
   },
   {
     id: 10,
@@ -70,6 +79,7 @@ export const songs: Song[] = [
     artist: "Post Malone",
     cover: "/imgs/covers/10.jpg",
     audio: "/audio/Sunflower.mp3",
+    coverPosition: "20% 45%",
   },
   {
     id: 11,
@@ -77,6 +87,7 @@ export const songs: Song[] = [
     artist: "Post Malone",
     cover: "/imgs/covers/11.jpg",
     audio: "/audio/Stay.mp3",
+    coverPosition: "center 45%",
   },
   {
     id: 12,
@@ -84,5 +95,6 @@ export const songs: Song[] = [
     artist: "Jorge & Mateus",
     cover: "/imgs/covers/12.jpg",
     audio: "/audio/OsAnjosCantam.mp3",
+    coverPosition: "center 55%",
   },
 ];

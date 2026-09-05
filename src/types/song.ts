@@ -4,4 +4,5 @@ export interface Song {
   artist: string;
   cover: string;
   audio: string;
+  coverPosition?: string;
 }
