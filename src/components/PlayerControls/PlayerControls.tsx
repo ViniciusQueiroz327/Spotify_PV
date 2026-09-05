@@ -1,3 +1,10 @@
+import {
+  SkipBack,
+  Play,
+  Pause,
+  SkipForward,
+} from "lucide-react";
+
 import "./PlayerControls.css";
 
 interface PlayerControlsProps {
@@ -15,16 +22,28 @@ const PlayerControls = ({
 }: PlayerControlsProps) => {
   return (
     <div className="player-controls">
-      <button onClick={previous} aria-label="Música anterior">
-        ⏮
+      <button
+        className="player-controls__secondary"
+        onClick={previous}
+        aria-label="Música anterior"
+      >
+        <SkipBack />
       </button>
 
-      <button onClick={togglePlay} aria-label={isPlaying ? "Pausar" : "Reproduzir"}>
-        {isPlaying ? "⏸" : "▶"}
+      <button
+        className="player-controls__play"
+        onClick={togglePlay}
+        aria-label={isPlaying ? "Pausar" : "Reproduzir"}
+      >
+        {isPlaying ? <Pause /> : <Play />}
       </button>
 
-      <button onClick={next} aria-label="Próxima música">
-        ⏭
+      <button
+        className="player-controls__secondary"
+        onClick={next}
+        aria-label="Próxima música"
+      >
+        <SkipForward />
       </button>
     </div>
   );
